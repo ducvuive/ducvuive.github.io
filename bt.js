@@ -34,12 +34,16 @@ btAdd.onclick = function(e){
 
     namePro=document.getElementById("inputName").value;
     moneyPro=document.getElementById("inputMoney").value;
-
+    console.log(typeof namePro)
+    if(namePro===''||moneyPro === ''){
+        alert('Nhập tên sản phẩm và giá tiền')
+    }
+    else{
     change_background();
     card.style.display = "block"
     name.innerHTML='Tên sản phẩm: '+namePro;
     money.innerHTML='Giá sản phẩm: '+ moneyPro;
-     
+    }
 }
 
 document.getElementById("agree").onclick = function(){
@@ -66,29 +70,16 @@ document.getElementById("bt_del").onclick = function(){
     if(kt===11){
         var check=confirm('Bạn chắc có muốn xoá sản phẩm không')
         if(check ===true){
-            for(var i=2;i<table.rows.length;i++){
+            for(var i=table.rows.length-1;i>=2;i--){
                 cells = table.rows[i].cells[0].childNodes[0];       
                    if(cells.checked===true){
                     table.deleteRow(i);
-                    console.log(1)
+                    //console.log(1)
                }
             }   
         }
     }
-    // for(var i=2;i<table.rows.length;i++){
-    //     cells = table.rows[i].cells[0].childNodes[0];       
-    //        if(cells.checked===true){
-    //         table.deleteRow(i);
-    //         console.log(1)
-    //    }
-    // }   
-}
+    else{
 
-// var cell11 = document.getElementById('confirm1')
-// console.log(cell11)
-// cell11.onchange = function(e){
-//     console.log(e.target.checked)
-//     if(cell11.checked==true){
-//         console.log(1)
-//    }
-// }
+    }
+}
