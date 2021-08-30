@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="app.css">
+    <title>Document</title> 
+</head>
+<body>
+    <div id="body1">
+    <table id="tb" border="1" class="tb1">
+        <tr>
+            <th colspan="3" id="check">Sản phẩm</th>
+        </tr>
+        <tr>
+            <td></td>
+            <td>Tên sản phẩm</td>
+            <td>Giá tiền</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" class="confirm" ></td>
+            <td>Bút</td>
+            <td>12000</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" class="confirm"></td>
+            <td>Vở</td>
+            <td>3000</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" class="confirm"></td>
+            <td>Vở</td>
+            <td>4000</td>
+        </tr>
+    </table> 
+  
+    
+   <!-- <form >-->
+        Tên sản phẩm: <input type="text" name="name" id="inputName">
+        Giá: <input type="number" name="money" id="inputMoney">
+        <button type="" id="bt_add">Thêm sản phẩm</button>
+        <button type="" id="bt_del">Xoá sản phẩm</button>
+    <!--</form>-->
+
+    </div>
+    <div id="card" >
+        <p>Bạn có muốn thêm sản phẩm </p>
+        <h3 id="infor_pro_name">Tên sản phẩm:</h3>
+        <h3 id="infor_pro_money">Giá sản phẩm:</h3>
+        <div class="card_cf">
+          <button type="button" class="card_confirm" id="agree">Đồng ý</button>
+          <button type="button" class="card_confirm" id="cancel">Huỷ</button>
+        </div>
+      </div>
+    <script src="bt.js"></script>
+</body>
+</html>
