@@ -11,27 +11,31 @@
     <div id="body1">
     <table id="tb" border="1" class="tb1">
         <tr>
-            <th colspan="3" id="check">Sản phẩm</th>
+            <th colspan="4" id="check">Sản phẩm</th>
         </tr>
         <tr>
             <td></td>
             <td>Tên sản phẩm</td>
             <td>Giá tiền</td>
+            <td></td>
         </tr>
-        <tr>
+        <tr id="sp1">
             <td><input type="checkbox" class="confirm" ></td>
             <td>Bút</td>
             <td>12000</td>
+            <td onclick="updateProduct('sp1')">Sửa</td>
         </tr>
-        <tr>
+        <tr id="sp2">
             <td><input type="checkbox" class="confirm"></td>
             <td>Vở</td>
             <td>3000</td>
+            <td onclick="updateProduct('sp2')">Sửa</td>
         </tr>
-        <tr>
+        <tr id="sp3">
             <td><input type="checkbox" class="confirm"></td>
             <td>Vở</td>
             <td>4000</td>
+            <td onclick="updateProduct('sp3')">Sửa</td>
         </tr>
     </table> 
   
@@ -41,6 +45,7 @@
         Giá: <input type="number" name="money" id="inputMoney">
         <button type="" id="bt_add">Thêm sản phẩm</button>
         <button type="" id="bt_del">Xoá sản phẩm</button>
+        <button type="" id="bt_summit">Summit</button>
     <!--</form>-->
 
     </div>
@@ -53,6 +58,25 @@
           <button type="button" class="card_confirm" id="cancel">Huỷ</button>
         </div>
       </div>
+
+      <div id="Confirm_product" >
+        <p>Bạn muốn nộp những sản phẩm này </p>
+        <ol class = "listProduct" style="line-height:180%"> 
+
+        </ol>
+        <div class="confirm">
+          <button type="button" class="card_confirm" id="agreeSummit">Đồng ý</button>
+          <button type="button" class="card_confirm" id="cancelSummit">Huỷ</button>
+        </div>
+      </div>
+
+
+      <div id="summit">
+          <p>Danh sách sản phẩm để nộp</p>
+      </div>
+      <!-- <input type="text" id="myText" >
+      <input type="text" name="money" id="inputMoney1"> -->
+      <p id="demo"></p>
     <script src="bt.js"></script>
 </body>
 </html>
