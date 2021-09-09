@@ -11,31 +11,35 @@
     <div id="body1">
     <table id="tb" border="1" class="tb1">
         <tr>
-            <th colspan="4" id="check">Sản phẩm</th>
+            <th colspan=5" id="check">Sản phẩm</th>
         </tr>
         <tr>
             <td></td>
             <td>Tên sản phẩm</td>
             <td>Giá tiền</td>
             <td></td>
+            <td></td>
         </tr>
         <tr id="sp1">
             <td><input type="checkbox" class="confirm" ></td>
-            <td>Bút</td>
-            <td>12000</td>
+            <td class='columnName'>Bút</td>
+            <td class='columnMoney'>12000</td>
             <td onclick="updateProduct('sp1')">Sửa</td>
+            <td onclick="cancelUpdate('sp1')">Huỷ</td>
         </tr>
         <tr id="sp2">
             <td><input type="checkbox" class="confirm"></td>
-            <td>Vở</td>
-            <td>3000</td>
+            <td class='columnName'>Vở</td>
+            <td class='columnMoney'>3000</td>
             <td onclick="updateProduct('sp2')">Sửa</td>
+            <td onclick="cancelUpdate('sp2')">Huỷ</td>
         </tr>
         <tr id="sp3">
             <td><input type="checkbox" class="confirm"></td>
-            <td>Vở</td>
-            <td>4000</td>
+            <td class='columnName'>Vở</td>
+            <td class='columnMoney'>4000</td>
             <td onclick="updateProduct('sp3')">Sửa</td>
+            <td onclick="cancelUpdate('sp3')">Huỷ</td>
         </tr>
     </table> 
   

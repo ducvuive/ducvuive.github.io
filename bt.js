@@ -28,13 +28,18 @@ function add_info(){
     var cell2 = row.insertCell(1);
     var cell3 = row.insertCell(2);
     var cell4 = row.insertCell(3);
+    var cell5 = row.insertCell(4);
     document.getElementById("inputName").value='';
     document.getElementById("inputMoney").value='';
     cell1.innerHTML = '<input type="checkbox">';
     cell2.innerHTML = namePro;
+    cell2.className = 'columnName';
     cell3.innerHTML = moneyPro;
+    cell3.className = 'columnMoney';
     cell4.innerHTML = "Sửa";
     cell4.setAttribute("onclick",`updateProduct('${id}')`)
+    cell5.innerHTML = "Huỷ";
+    cell5.setAttribute("onclick",`cancelUpdate('${id}')`)
 }
 
 btAdd.onclick = function(e){
@@ -139,45 +144,21 @@ document.getElementById("bt_summit").onclick = function(){
             }
         }   
  }
-
  /* Sửa dữ liệu */
-var click = 0;
-var checkId ;
-var valueUpdate = [];
-function updateProduct(id){
-    click++;
+
+ var checkCancel = false; // check xem huy duoc khong
+function beforeUpdate(id){
+    getIndexInfoUpdate = 0;
 
     numberProduct = document.querySelector("#"+id);
     var infor_numberProduct = numberProduct.querySelectorAll("td")
 
-    lengthProperties = infor_numberProduct.length;
-    getIndexInfoUpdate = 0;
-    if(click%2==0 ){
-        infor_numberProduct[lengthProperties-1].innerText = "Sửa"
-        infor_numberProduct[0].innerHTML = '<input type="checkbox">';    
-        for (var i=1; i<lengthProperties-1;i++){
-            if(valueUpdate[getIndexInfoUpdate]=="undefined")
-                infor_numberProduct[i].innerText=""
-            else
-            infor_numberProduct[i].innerText=valueUpdate[getIndexInfoUpdate];
-            getIndexInfoUpdate ++;
-        }
-        valueUpdate=[];
-    }
-    // else if(click%2==0 && checkId !=id){
-    //     if(a=[]){
-
-    //     }
-    // }
-    else{
-    checkId = id;
-    infor_numberProduct[lengthProperties-1].innerText = "Đồng ý"
-    infor_numberProduct[0].innerText = "Huỷ"    
-     for (var i=1; i<lengthProperties-1;i++){
+    for (var i=1; i<columnTable-2;i++){
         //console.log( infor_numberProduct[i]) 
         text = infor_numberProduct[i].innerText;
         valueUpdate[getIndexInfoUpdate] = text ;
-        console.log(valueUpdate[getIndexInfoUpdate],i,getIndexInfoUpdate,"cccccccc")
+        valueUpdate[getIndexInfoUpdate+2] = text ;
+        //console.log(valueUpdate[getIndexInfoUpdate],i,getIndexInfoUpdate,"cccccccc")
         infor_numberProduct[i].innerHTML = '<input type="text" size="12">'
         //console.log(infor_numberProduct[i])
         var t = infor_numberProduct[i].querySelector('input')
@@ -187,17 +168,109 @@ function updateProduct(id){
       
            getIndexInfoUpdate++;
         }
-        getIndexInfoUpdate=0;
-        for (var i=1; i<lengthProperties-1;i++){
-            infor_numberProduct[i].onchange = function(e){
-                // console.log(e)
-                // valueUpdate[getIndexInfoUpdate++] = e.target.value;
-                // console.log(valueUpdate[getIndexInfoUpdate],i,getIndexInfoUpdate)
-                // console.log(e.target.value)
-                //getIndexInfoUpdate++;
-                 console.log(i)
-               }
+}
+// huy summit
+function cancelUpdate(id){
+    if(checkCancel===true && checkId===id){
+        click++;
+        numberProduct = document.querySelector("#"+id);
+        getIndexInfoUpdate = 0;
+        var infor_numberProduct = numberProduct.querySelectorAll("td")
+
+        var columnTable = infor_numberProduct.length;
+
+        infor_numberProduct[columnTable-2].innerText = "Sửa"
+        infor_numberProduct[0].innerHTML = '<input type="checkbox">';    
+        for (var i=1; i<columnTable-2;i++){
+            if(valueUpdate[getIndexInfoUpdate]=="undefined")
+                infor_numberProduct[i].innerText=""
+            else
+            infor_numberProduct[i].innerText=valueUpdate[getIndexInfoUpdate];
+            getIndexInfoUpdate ++;
         }
+        valueUpdate=[];
+        checkId = '';
     }
+}
+
+function changeUpdate(id){
+
+    numberProduct = document.querySelector("#"+id);
+    var infor_numberProduct = numberProduct.querySelectorAll("td")
+
+    columnTable = infor_numberProduct.length;
+
+             for (var i=1; i<columnTable-2;i++){
+                infor_numberProduct[i].onchange = function(e){
+                     console.log(e)
+                    // path[1] sẽ chỉ đến thẻ đang thay đổi
+                     if(e.path[1].className==='columnName'){
+                        valueUpdate[2] = e.target.value;
+                     }
+                     if(e.path[1].className==='columnMoney')
+                        valueUpdate[3] = e.target.value;
+                   }
+            }
+}
+
+var click = 0;// check: click chẵn ấn sửa được, click lẻ ấn đồng ý được
+var checkId ;
+var valueUpdate = [];// phan tu 0,1 la gia tri ban dau cua bang, ptu 3,4 la gia tri update
+function updateProduct(id){
+
+
+    numberProduct = document.querySelector("#"+id);
+    var infor_numberProduct = numberProduct.querySelectorAll("td")
+
+    columnTable = infor_numberProduct.length;
+    
+    // đồng ý và trùng cột
+    if(click%2==1 && checkId === id){
+        getIndexInfoUpdate = 2; //dong y nen chon 2 ptu luu gia tri thay doi
+        console.log(click, "đồng ý và trùng cột")
+        click++;
+        //cancelUpdate(id)
+        infor_numberProduct[columnTable-2].innerText = "Sửa"
+        infor_numberProduct[0].innerHTML = '<input type="checkbox">';    
+        for (var i=1; i<columnTable-2;i++){
+            if(valueUpdate[getIndexInfoUpdate]=="undefined")
+                infor_numberProduct[i].innerText=""
+            else
+            infor_numberProduct[i].innerText=valueUpdate[getIndexInfoUpdate];
+            getIndexInfoUpdate ++;
+        }
+        valueUpdate=[];
+        checkCancel = false;
+        checkId ='';
+    }
+    // ấn sửa
+    else if(click%2==0 && checkId !== id){
+        click++;
+        console.log(click, "ấn sửa")
+        checkCancel = true;
+        checkId = id;
+        infor_numberProduct[columnTable-2].innerText = "Đồng ý"
+        //infor_numberProduct[0].innerText = "Huỷ"    
+            
+            beforeUpdate(id);
+    
+            changeUpdate(id);
+        }
+    // ấn sửa cột khác khi chưa ấn đồng ý
+    else {
+      cancelUpdate(checkId);
+      click=1;
+      console.log(click, "ấn sửa cột khác khi chưa ấn đồng ý")
+      checkCancel = true;
+      checkId = id;
+      infor_numberProduct[columnTable-2].innerText = "Đồng ý"
+      //infor_numberProduct[0].innerText = "Huỷ"    
+          
+          beforeUpdate(id);
+  
+          changeUpdate(id);
+
+    }
+   
 }
 
