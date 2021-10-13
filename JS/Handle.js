@@ -38,14 +38,14 @@ const progress = $("#progress")
         isPlaying: false,
         isRandom: false,
         isRepeat: false,
-        config: JSON.parse(localStorage.getItem(PLAYER_STOGARE_KEY))||{
-            isRepeat: false,
-            isRandom: false,
-        },
-        setConfig: function(key,value){
-            this.config[key]=value;
-            localStorage.setItem(PLAYER_STOGARE_KEY,JSON.stringify(this.config));
-        },
+        // config: JSON.parse(localStorage.getItem(PLAYER_STOGARE_KEY))||{
+        //     isRepeat: false,
+        //     isRandom: false,
+        // },
+        // setConfig: function(key,value){
+        //     this.config[key]=value;
+        //     localStorage.setItem(PLAYER_STOGARE_KEY,JSON.stringify(this.config));
+        // },
         songs:  [ 
         {
             name : '1 phút',
@@ -76,6 +76,18 @@ const progress = $("#progress")
             singer : 'Trung Quân',
             path : './Music/song5.mp3',
             image : './Img/image5.jpg'
+        },
+        {
+            name : 'Chỉ còn lại tình yêu',
+            singer : 'Hà Anh Tuấn',
+            path : './Music/song6.mp3',
+            image : './Img/image6.jpg'
+        },
+        {
+            name : 'Dont let me down',
+            singer : 'Alan Walker',
+            path : './Music/song7.mp3',
+            image : './Img/image7.jpg'
         },
      ],
         render: function(){
@@ -197,14 +209,14 @@ const progress = $("#progress")
             }
             randomBtn.onclick = function(){
                 app.isRandom = ! app.isRandom;
-                app.setConfig('isRandom',app.isRandom);
+                // app.setConfig('isRandom',app.isRandom);
                 randomBtn.classList.toggle("active",app.isRandom);
                 
             }
             repeatBtn.onclick = function(){
                 app.isRepeat =! app.isRepeat;
                 audio.loop = true;
-                app.setConfig('isRepeat',app.isRepeat);
+                // app.setConfig('isRepeat',app.isRepeat);
                 repeatBtn.classList.toggle("active",app.isRepeat);
             }
             audio.onended = function(){
@@ -216,7 +228,7 @@ const progress = $("#progress")
             playlist.onclick = function(e){
                 // xử lí khi click vào song
                // console.log(e.target)
-                songNode = e.target.closest('.song: (.active)');
+                songNode = e.target.closest('.song:not(.active)');
                 if(songNode || !e.target.closest('.option')){
                     if(songNode){
                         //console.log(songNode.getAttribute('data-index'))
@@ -228,9 +240,9 @@ const progress = $("#progress")
                         app.scrollToActiveSong();   
                     }
                     //xu ly khi click vao option
-                    if(e.target.closest('.song:not(.active)')){
+                    // if(e.target.closest('.song:not(.active)')){
 
-                    }
+                    // }
                 }
             }
         },
@@ -240,10 +252,10 @@ const progress = $("#progress")
             this.currentIndex %= this.songs.length; // nếu quá số bài hát thì quay lại đầu
             this.loadCurrentSong();
         },
-        loadConfig: function(){
-            this.isRandom = this.config.isRandom
-            this.isRepeat = this.config.isRepeat
-        },
+        // loadConfig: function(){
+        //     this.isRandom = this.config.isRandom
+        //     this.isRepeat = this.config.isRepeat
+        // },
         preSong: function(){
             this.currentIndex--;
             if(this.currentIndex < 0) this.currentIndex = 4;// nếu quá số bài hát thì quay lại cuối
@@ -296,7 +308,7 @@ const progress = $("#progress")
         },
         // mọi thứ làm trong hàm start 
         start: function(){
-            this.loadConfig();
+            // this.loadConfig();
             //Định nghĩa các thuộc tính cho object
             this.defineProperties();
             // lắng nghe và xử lý các sự kiện (DOM)
