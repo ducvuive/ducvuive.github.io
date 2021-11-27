@@ -1,5 +1,6 @@
 //homepage
 //scroll from over slider 
+
 $(window).on('load', function(){
     let slider = $('.slider')
     let sliderHeight = slider.height();
@@ -29,7 +30,6 @@ $(window).on('load', function(){
     // })
     //back to top
     let backTop = $('.back-to-top')
-
     backTop.on('click',function(e){
         e.preventDefault()
         window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -58,7 +58,9 @@ $(window).on('load', function(){
         nav.toggleClass('active')
         hamberger.toggleClass('active')
     })
-
+    //load 
+    let load =  $('.load');
+    load.css('display', 'none')
     // flickity
     $('.main-carousel').flickity({
         // options
@@ -83,6 +85,7 @@ $(window).on('load', function(){
         //     }
         // }
       });
+
 })
 
 
