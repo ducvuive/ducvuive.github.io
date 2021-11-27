@@ -1,0 +1,144 @@
+.newspage{
+    .title_main{
+        height: 450px;
+        width: 100%;
+        background-image: url(../img/news_title.jpg);
+        background-size: auto;
+        background-attachment: fixed;
+        margin-top:calc( 0px - var(--height-header)); 
+        .container{
+            position:relative;
+            height: 100%;
+            overflow: hidden;
+            h1{
+                @include text(2.6rem, en, 5rem, $white-cl, uppercase);
+                top: 50%;
+                width: 100%;
+                position: absolute;
+                transform: translateY(-50%);
+                left: 85px;  
+                &:before {
+                    content: " ";
+                    width: 100%;
+                    height: 1px;
+                    background-color: #929391;
+                    position: absolute;
+                    bottom: -50px;
+                }
+            }
+        }
+    }
+    .thumnail{
+        .container{
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            grid-template-rows: 420px 420px;
+            grid-gap: 28px;
+            margin-top: -40px;
+            padding: auto 14px;
+            padding-right: 0;
+            overflow: hidden;
+            .item{
+                position: relative;
+                cursor: pointer;
+                .img{
+                    position: relative;
+                    overflow: hidden;
+                    img{
+                        transform: scale(1);
+                        transition: 0.4s;
+                    }
+                }
+                .title{
+                    padding-left: 15px;
+                    h4{
+                        width: 270px;
+                        @include text(1.2rem, arb, 2rem, $black-cl, none);
+                        letter-spacing:-0.3px;
+                        margin-bottom: 30px;
+                    }
+                    h3{
+                        font-family: arb;
+                        text-transform: uppercase;
+                        letter-spacing:-0.3px;
+                        margin-top: 12px;
+                        margin-bottom: 10px;
+                        color: $black-cl;
+                    }
+                    .bottom{
+                        display: flex;
+                        align-items: center;
+                        position: absolute;
+                        bottom: 15px;
+                        h3{
+                            @include text(1.1rem, arb, 4rem, $black-cl, uppercase);
+                            letter-spacing:-0.3px;
+                            margin-right: 10px;
+                        }
+                        img{
+                            height: 7px;
+                            filter:brightness(0) saturate(100%);                            
+                        }
+                    }
+                }
+                &:hover{
+                    background-color:#6d5019;
+                    transition: 0.4s;
+                    .img{
+                        img{
+                            transform: scale(1.3);
+                            transition: 0.4s;
+                        }
+                    }
+                    .title{
+                        h3,h4{
+                            color: $white-cl;
+                        }
+                        .bottom{
+                            img{
+                                filter: brightness(0) saturate(100%) invert(100%);
+                            }
+                        }
+                    }
+                }
+                &:before{
+                    content: " ";
+                    background-color:#bababa;
+                    height:calc(100% + 28px);;
+                    width: 1px;
+                    position: absolute;
+                    margin-right: -15px;
+                    right:0;
+                    z-index: -1;
+                }
+            }
+        }
+    }
+    .pager{
+        margin-top: 78px;
+        margin-bottom: 75px;
+        .container{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            .btn{
+                width: 33px;
+                height: 33px;
+                border: none;
+                border-radius: 0;
+                margin:auto 7px;
+                span{
+                    margin: auto;
+                    @include text(1.2rem, arn, 2rem, #232323, none);
+                }
+                &:hover{
+                    border: 1px solid #c1c1c1;
+                    background-color: #ebebeb;
+                }
+            }
+        }
+    }
+    .home{
+        top: 300px;
+    }
+}

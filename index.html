@@ -1,73 +1,357 @@
-
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
-    <title>Music player</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
-    <link rel="stylesheet" href="./CSS/app.css">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>Furnitown</title>
+    <link rel="icon" href="favicon.ico">
+    <meta name="title" content="" />
+    <meta name="description" content="" />
+
+    <!-- meta facebook -->
+    <meta property="og:locale" content="vi" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="" />
+    <meta property="og:description" content="" />
+    <meta property="og:url" content="" />
+    <meta property="og:site_name" content="" />
+    <meta property="og:image" content="" />
+
+    <link rel="stylesheet" href="dest/style.min.css">
+    <link rel="stylesheet" href="dest/fonts.css">
+    <link rel="stylesheet" href="css/flickity.css">
 </head>
-<body>
-    
-        </html>
-        <div class="player">
-        <!-- Dashboard -->
-        <div class="dashboard">
-            <!-- Header -->
-            <header>
-            <h4>Now playing:</h4>
-            <h2>String 57th & 9th</h2>
-            </header>
 
-            <!-- CD -->
-            <div class="cd">
-            <div class="cd-thumb" style="background-image: url('https://i.ytimg.com/vi/jTLhQf5KJSc/maxresdefault.jpg')">
-            </div>
-            </div>
+<!-- Mỗi body của mỗi page nên có class ví dụ homepage, aboutpage, contactpage... -->
 
-            <!-- Control -->
-            <div class="control">
-            <div class="btn btn-repeat">
-                <i class="fas fa-redo"></i>
-            </div>
-            <div class="btn btn-prev">
-                <i class="fas fa-step-backward"></i>
-            </div>
-            <div class="btn btn-toggle-play">
-                <i class="fas fa-pause icon-pause"></i>
-                <i class="fas fa-play icon-play"></i>
-            </div>
-            <div class="btn btn-next">
-                <i class="fas fa-step-forward"></i>
-            </div>
-            <div class="btn btn-random ">
-                <i class="fas fa-random"></i>
-            </div>
-            </div>
-
-            <input id="progress" class="progress" type="range" value="0" step="1" min="0" max="100">
-
-            <audio id="audio" src=""></audio>
-        </div>
-
-        <!-- Playlist -->
-        <div class="playlist">
-            <!-- <div class="song">
-                <div class="thumb" style="background-image: url('https://i.ytimg.com/vi/jTLhQf5KJSc/maxresdefault.jpg')"></div>
-                <div class="body">
-                    <h3 class="title">Music name</h3>
-                    <p class="author">Singer</p>
-                </div>
-                <div class="option">
-                    <i class="fas fa-ellipsis-h"></i>
+<body class="homepage">
+       <!-- HEADER -->
+       <header>
+        <div class="container-fluid">
+            <div class="left">
+                <a href="index.html">furnitown</a>
+                <!-- <a>furnitown</a> -->
+                <!-- <span>share</span> -->
+                <a href="#">share</a>
+                <div class="img">
+                    <img src="./img/arrow.png" alt="mũi tên">
                 </div>
             </div>
-        -->
         </div>
+    </header>
+    <!-- end header -->
+
+    <!-- MAIN -->
+    <main class="mainwrapper">
+        <!-- Example HTML -->
+        <!-- begin slider -->
+        <section class="slider">
+            <div class="main-carousel">
+                <div class="item ">
+                    <img src="./img/home_slider.jpg" class="carousel-cell" alt="slider">
+                    <div class="title">
+                        <h1>FURNITOWN</h1>
+                        <h3>Nơi tìm thấy mảnh ghép nội thất còn thiếu cho ngôi nhà của bạn</h3>
+                        <span></span>
+                        <div class="btn --black">
+                            <a href="aboutus.html">VỀ CHÚNG TÔI</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="item ">
+                    <img src="./img/list_item1.jpg"  class="carousel-cell"alt="slider">
+                    <div class="title">
+                        <h1>SẢN PHẨM</h1>
+                        <h3>Với những sản phẩm chất lượng hàng đầu Việt Nam</h3>
+                        <span></span>
+                        <div class="btn --black">
+                            <a href="aboutus.html">VỀ CHÚNG TÔI</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="home">
+                <div class="img">
+                    <img src="./img/logo.png" alt="Logo"> 
+                </div>
+                <div class="logo-hover">
+                    <h3>menu</h3>
+                    <div class="logo__full">
+                        <img src="./img/logo_full.svg" width="80" alt="Logo_full"> 
+                    </div>
+                </div>
+                <div class="hamberger">
+                    <span></span>
+                </div>
+            </div>
+            <div class="bottom">
+                <img src="./img/mouse.png" alt="con chuột">
+                <span>sản phẩm furnitown</span>
+            </div>
+        </section>
+        <!-- end slider -->
+        <!-- begin header-fixed -->
+        <section class="title_mobile">
+            <div class="container">
+                <h1>FURNITOWN</h1>
+                <h3>Nơi tìm thấy mảnh ghép nội thất còn thiếu cho ngôi nhà của bạn</h3>
+                <div class="btn">
+                    <span>VỀ CHÚNG TÔI</span>
+                </div>
+            </div>
+        </section>
+        <section class="menu_fixed">
+            <div class="container">
+                <ul class="header__menu">
+                    <div class="hamberger">
+                        <span></span>
+                        <h2>menu</h2>
+                    </div>
+                    <li>
+                        <a href="index.html">furnitown</a>
+                    </li>
+                    <li>
+                        <a href="product.html">sản phẩm</a>
+                    </li>
+                    <li>
+                        <a href="service.html">dịch vụ</a>
+                    </li>
+                    <div class="logo__menu ">
+                        <a href="index.html">
+                            <img src="./img/logo_full.svg" alt="Logo">
+                        </a>
+                        <h1 style="visibility: hidden;">WOODER</h1>
+                    </div>
+                    <li>
+                        <a href="project.html">dự án</a>
+                    </li>
+                    <li>
+                        <a href="news.html">tin tức</a>
+                    </li>
+                    <li>
+                        <a href="contact.html">liên hệ</a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <nav>
+            <ul class="nav__menu">
+                <div class="contact">
+                    <div class="title">follow us</div>
+                    <div class="icon">
+                        <a href="#">
+                            <img src="./img/mail.png" alt="mail">
+                        </a>
+                        <a href="#">
+                            <img src="./img/facebook.png" alt="facebook">
+                        </a>
+                    </div>
+                </div>
+                <li class="nav__menu-option">
+                    <a href="index.html" class="nav__menu-link">funitown</a>
+                </li>
+                <li class="nav__menu-option">
+                    <a href="product.html" class="nav__menu-link">sản phẩm</a>
+                </li>
+                <li class="nav__menu-option">
+                    <a href="service.html" class="nav__menu-link">dịch vụ</a>
+                </li>
+                <li class="nav__menu-option">
+                    <a href="project.html" class="nav__menu-link">dự án</a>
+                </li>
+                <li class="nav__menu-option">
+                    <a href="contact.html" class="nav__menu-link">liên hệ</a>
+                </li>
+                <li class="nav__menu-option">
+                    <div class="more">
+                        <a href="#" class="nav__menu-link">FAQS</a>
+                        <a href="news.html" class="nav__menu-link">tin tức</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+        <!-- end header-fixed -->
+        <section class="menu_more">
+            <div class="container-fluid">
+                <div class="container-fluid_header">
+                    <h3>furnitown</h3>
+                    <div class="contact">
+                        <h3>follow us</h3>
+                        <div class="contact_img">
+                            <img src="./img/mail.png" alt="mail">
+                        </div>
+                        <div class="contact_img">
+                            <img src="./img/facebook.png" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="container-fluid_nav">
+                    <div class="img">
+                        <span>
+                            <img src="./img/logo.svg" alt="Logo">
+                        </span>
+                        <span class="close">
+                        </span>
+                    </div>
+                    <div class="page">
+                        <a href="index.html">
+                            <h2>furnitown</h2>
+                        </a>
+                        <a href="product.html">
+                            <h2>sản phẩm</h2>
+                        </a>
+                        <a href="service.html">
+                            <h2>dịch vụ</h2>
+                        </a>
+                        <a href="project.html">
+                            <h2>dự án</h2>
+                        </a>
+                        <a href="contact.html">
+                            <h2>liên hệ</h2>
+                        </a>
+                        <div class="bottom">
+                            <h3>faqs</h3>
+                            <a href="news.html">tin tức</a>
+                        </div>                    
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="rooms">
+            <div class="container">
+                <div class="workroom">
+                    <div class="title">
+                        <h4>“ Hãy đến & khám phá <span>Funitown</span>, để có cơ hội thoả sức lựa chọn về 
+                            màu sắc và kiểu dáng trong thế giới nội thất; cùng sự an tâm trong việc
+                            tư vấn chu đáo, tận tình của đội ngũ nhân viên.  ”</h4>
+                    </div>
+                    <div class="item">
+                        <span class = "name_room">phòng làm việc</span>
+                        <div class="img">
+                            <a href="#">
+                                <img src="./img/room1.jpg" class="zoom_img" alt="Room 1" />
+                            </a>
+                            <div class="overlay bg-blue">
+                                <img src="./img/logo.svg" alt="Logo">
+                                <h4>“Không gian sáng tạo cho sự thành đạt.”</h4>
+                                <div class="more">
+                                    <h3>more</h3>
+                                    <img src="./img/arrow.png" alt="mui ten">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="livingroom">
+                    <div class="item">
+                        <span class = "name_room">phòng khách</span>
+                        <div class="img">
+                            <a href="">
+                                <img src="./img/room2.jpg" class="zoom_img" alt="Room 2" />
+                            </a>
+                            <div class="overlay bg-yellow">
+                                <img src="./img/logo.svg" alt="Logo">
+                                <h4>“Không gian sáng tạo cho sự thành đạt.”</h4>
+                                <div class="more">
+                                    <h3>more</h3>
+                                    <img src="./img/arrow.png" alt="mui ten">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="kitchen">
+                    <div class="item">
+                        <span class = "name_room">Nhà bếp</span>
+                        <div class="img">
+                            <a href="#">
+                                <img src="./img/room3.1.jpg" class="zoom_img kc2" alt="Room 1" />
+                                <img src="./img/room3.jpg" class="zoom_img kc1" alt="Room 1" />
+                            </a>
+                            <div class="overlay bg-blue">
+                                <img src="./img/logo.svg" alt="Logo">
+                                <h4>“Không gian sáng tạo cho sự thành đạt.”</h4>
+                                <div class="more">
+                                    <h3>more</h3>
+                                    <img src="./img/arrow.png" alt="mui ten">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bedroom">
+                    <div class="item">
+                        <span class = "name_room">phòng ngủ</span>
+                        <div class="img">
+                            <a href="#">
+                                <img src="./img/room4.jpg" class="zoom_img" alt="Room 1" />
+                            </a>
+                            <div class="overlay bg-yellow">
+                                <img src="./img/logo.svg" alt="Logo">
+                                <h4>“Không gian sáng tạo cho sự thành đạt.”</h4>
+                                <div class="more">
+                                    <h3>more</h3>
+                                    <img src="./img/arrow.png" alt="mui ten">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="badroom">
+                    <div class="item">
+                        <span class = "name_room">nhà tắm</span>
+                        <div class="img">
+                            <a href="#">
+                                <img src="./img/room5.jpg" class="zoom_img" alt="Room 1" />
+                            </a>
+                            <div class="overlay bg-blue">
+                                <img src="./img/logo.svg" alt="Logo">
+                                <h4>“Không gian sáng tạo cho sự thành đạt.”</h4>
+                                <div class="more">
+                                    <h3>more</h3>
+                                    <img src="./img/arrow.png" alt="mui ten">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="title">
+                        <h4>“ Hãy đến & khám phá <span>Funitown</span>, để có cơ hội thoả sức lựa chọn về 
+                            màu sắc và kiểu dáng trong thế giới nội thất; cùng sự an tâm trong việc
+                            tư vấn chu đáo, tận tình của đội ngũ nhân viên.  ”</h4>
+                    </div>
+                    <div class="pen">
+                        <img src="./img/Pen.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- overlay -->
+    <div class="overlay_gray">
+    </div>
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="contact">
+                <div class="img">
+                    <img src="./img/logo_full.png" alt="">
+                </div>
+                <p>
+                Thời gian mở cửa: 8h - 18h  - Thứ 2 đến Chủ nhật<br>
+                    Số 7/22A, Ấp 6, xã Đông Thạnh, huyện Hóc Môn, thành phố Hồ Chí Minh<br>
+                    Hotline: 0937.168.938<br>
+                    Email: noithatfunitown@gmail.com</p>
+            </div>
+            <span class="back-to-top">back to top</span>
         </div>
-        <script src="./JS/Handle.js"></script>
-<!-- Design from: https://static.collectui.com/shots/3671744/musicloud-revolutionary-app-for-music-streaming-large -->
+    </footer>
+
+    <script type="text/javascript" src="dest/jsmain.min.js"></script>
+    <script type="text/javascript" src="dest/main.js"></script>
+    <script type="text/javascript" src="js/libs/flickity.pkgd.min.js"></script>
+
 </body>
+
+</html>

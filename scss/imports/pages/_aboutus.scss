@@ -1,0 +1,114 @@
+.aboutus{
+    position: relative;
+    .main_title{
+        margin-bottom: 240px;
+        .container{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            h1{
+                margin-top: 65px;
+                @include text(4.4rem, en, 5rem, #745a2d, uppercase); 
+                letter-spacing:4.4px;
+            }
+            h2{
+                @include text(var(--body12-fs), arn, var(--body12-lh), $black-cl, uppercase); 
+                letter-spacing:1.4px;
+            }
+            .wrapper{
+                width: 770px;
+                text-align: center;
+                h3{
+                    @include text(1.4rem, arn,4.6rem, #191919, none); 
+                    letter-spacing:1.4px;
+                }
+            }
+            img{
+                margin: 40px auto 73px;
+            }
+        }
+    }
+    .wrapper{
+        margin-bottom: 160px;
+        .container{
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+            grid-template-rows: auto;
+            .title{
+                width: 370px;
+                h3{
+                    @include text(1.4rem, arn,4.6rem, #191919, none); // tuỳ chỉnh
+                    letter-spacing: 0.14px;
+                }
+            }
+            .img{
+                margin-top: 120px;
+                position: relative;
+                &:before{
+                    content: " ";
+                    width: 1px;
+                    height: 236px;
+                    position: absolute;
+                    background-color: #c7c8c7;
+                    top: -332px;
+                    left: 13px;
+                }
+            }
+        }
+    }
+    .conclude{
+        margin-bottom: 142px;
+        .container{
+            width: 692px;
+            text-align: center;
+            .title{
+                @include text(1.4rem, arn,2.6rem, #191919, none);   
+                letter-spacing:1.4px;
+                margin-bottom: 30px;
+            }
+            .info{
+                @include text(1.1rem, arb,2.6rem, #191919, none);   
+                letter-spacing:1.1px;
+                margin-bottom: 44px;
+                h2{
+                    text-transform: uppercase;
+                }
+            }
+            .img{
+                position: relative;
+                margin-bottom: 75px;
+                .sign_img{
+                    position: absolute;
+                    bottom: -17px;
+                    right: 20px;
+                }
+            }
+            h4{
+                @include text(1.4rem, arn,2.6rem, #191919, none);   
+                letter-spacing:1.4px;
+                margin-bottom: 45px;
+            }
+            .more{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                .btn{
+                    width: 200px;
+                    height: 35px;
+                    border-radius:0px;
+                    margin: auto 15px;
+                    h4{
+                        @include text(1.1rem, arb,2.6rem, none, uppercase);   
+                        margin:0;
+                    }
+                    &.--black{
+                        h4{
+                            color: $white-cl !important;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

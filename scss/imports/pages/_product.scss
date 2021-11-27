@@ -1,0 +1,154 @@
+.productpage{
+    .title_main{
+        position: relative;
+        height: 450px;
+        margin-bottom: 70px;
+        width: 100%;
+        background-image: url(../img/news_title.jpg);
+        background-size: auto;
+        background-attachment: fixed;
+        margin-top:calc( 0px - var(--height-header)); 
+        .container{
+            position:relative;
+            height: 100%;
+            h1{
+                @include text(2.6rem, en, 5rem, $white-cl, uppercase);
+                top: 50%;
+                width: 100%;
+                position: absolute;
+                transform: translateY(-50%);
+                right: 0;
+                text-align: end;
+                width: 530px;
+            }
+        }
+        .home{
+            position: absolute;
+            bottom:0;
+            top: auto;
+        }
+    }
+    .product{
+        .container{
+            padding: 0 30px;
+            .product_room{
+                position: relative;
+                .title{
+                    display: flex;
+                    justify-content: space-between;
+                    // text-align: end;
+                    .left{
+                        display: flex;
+                        align-items: center;
+                        .number{
+                            margin-right:18px;
+                            span{
+                                @include text(9rem, en, 13.7rem, #c48b2c, uppercase); 
+                                letter-spacing:-2.25px;
+                            }
+                        }
+                        .content{
+                            width: 460px;
+                            h2{
+                                @include text(1.8rem, en, 4rem, $black-cl, uppercase); 
+                            }
+                            h3{
+                                @include text(1.2rem, arn, 2rem, $black-cl, none); 
+                            }
+                        }
+                    }
+                    .right{
+                        display: flex;
+                        align-items: center;
+                        padding-top: 60px;
+                        font-family:  arb;
+                        text-transform: uppercase;
+                        h4{
+                            margin-left: 15px;
+                        }
+                    }
+                }
+                .list_item{
+                    display: grid;
+                    grid-template-columns: repeat(3,1fr);
+                    grid-template-rows: 540px;
+                    grid-gap: 30px;
+                    margin-bottom: 25px;
+                    background:
+                    linear-gradient(#bababa,#bababa) center/1px 82.5% no-repeat,
+                    linear-gradient(#bababa,#bababa) center/1px 82.5% no-repeat;
+                    background-position: 33% 0, 67.3% 0;
+                    .item{
+                        position: relative;
+                        .img{
+                            height: 365px;
+                            margin-bottom: 20px;
+                            position: relative;
+                            overflow: hidden;
+                            object-fit: cover;
+                            img{
+                                @include transform(scale(1));
+                                @include transition($t);
+                                height: 100%;
+                                min-width: 100%;
+                                object-fit: cover;
+                                position: absolute;
+                                &:hover{
+                                    @include transform(scale(1.2));
+                                    @include transition($t);
+                                } 
+                            }  
+                        }
+                        h2{
+                            @include text(1.8rem, arn, 4rem, $black-cl, none);
+                            letter-spacing: -0.45px;
+                        }
+                        h4{
+                            letter-spacing:1.2px;
+                            font-family: arn;
+                            color: $black-cl;
+                            text-transform: uppercase;
+                        }
+                        .bottom{
+                            display: flex;
+                            align-items: center;
+                            position: absolute;
+                            bottom: 15px;
+                            h4{
+                                @include text(1.1rem, arb, 4rem, $black-cl, uppercase);
+                                letter-spacing:-0.3px;
+                                cursor: pointer;
+                            }
+                            img{
+                                margin-right: 10px;
+                                height: 7px;
+                                filter:brightness(0) saturate(100%);                            
+                            }
+                        }
+                    }
+                }
+                .pause{
+                    position: absolute;
+                    bottom:0;
+                    right:0;
+                    cursor: pointer;
+                    width:80px;
+                    img{
+                        max-width: 100%;
+                    }
+                }
+                &:not(:last-child):before{
+                        content: " ";
+                        position: absolute;
+                        bottom: -20px;
+                        height: 1px;
+                        width: 100%;
+                        background: #dbdbdb;
+                    }
+            }
+        }
+    }
+    footer{
+        margin-top: 70px;
+    }
+}

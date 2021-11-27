@@ -1,0 +1,58 @@
+// css footer
+footer {
+    background-color:$blue-cl;
+    height: var(--height-footer);
+    .container{
+        position: relative;
+        height:100%;
+        .contact{
+            position:absolute;
+            bottom: 235px;
+            width: 100%;
+            left: 50%;
+            @include transform(translateX(-50%));
+            text-align: center;
+            p{
+                @include text(1.1rem, arn, 2.6rem, $white-cl, uppercase); // tuỳ chỉnh
+                letter-spacing:0.55px;
+                margin-top: 35px
+            }
+            &:before{
+                content:" ";
+                position: absolute;
+                height:1px;
+                width: 43%;
+                left:0;
+                top:22%;
+                background-color:#2f383e;
+            }
+            &:after{
+                content:" ";
+                position: absolute;
+                height:1px;
+                width: 43%;
+                right:0;
+                top:22%;
+                background-color:#2f383e;
+            }
+        }
+        .back-to-top{
+            position:absolute;
+            cursor: pointer;
+            right:-45px;
+            bottom:90px;
+            transform: rotate(90deg);
+            @include text(1rem, arn, 2.6rem, #aaaaaa, uppercase); // tuỳ chỉnh
+            letter-spacing: 2px;
+            &:before{
+                content:" ";
+                position: absolute;
+                height:1px;
+                width: 130px;
+                top:50%;
+                left:-150px;
+                background-color:#2f383e;
+            }
+        }
+    }
+}

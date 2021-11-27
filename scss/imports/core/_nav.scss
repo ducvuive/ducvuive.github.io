@@ -1,0 +1,82 @@
+// css navigator (Menu)
+nav{
+    display: none;
+    @include sm{
+        // background-color: #000;
+        display:block;
+        .nav__menu{
+            position: fixed;
+            display: flex;
+            justify-content: flex-start;
+            flex-direction:column;
+            //display: none;
+            z-index: 100;
+            width: 100vw;
+            //height: calc(100vh - var(--height-header));
+            height: 100vh;
+            //top:var(--height-header);
+            top:0;
+            background:rgb(63, 61, 61);
+            opacity: 0;
+            pointer-events: none;
+            @include transition($t);
+            .contact{
+                position:relative;
+                display: flex;
+                margin-left: 15px;
+                margin-bottom: 15px;
+                margin-top: 105px;
+                .title{
+                    @include text(1.8rem,arb, 5rem, $white-cl, uppercase); // tuỳ chỉnh
+                }
+                .icon{
+                    text-align: center;
+                    top: 53%;
+                    left: 120px;
+                    transform: translateY(-50%);
+                    position: absolute;
+                    a{
+                        margin-right: 32px;
+                        img{
+                            filter: invert(100%);
+                        }
+                    }
+                }
+            }
+            &-option{
+                margin-bottom: 35px;
+                margin-left: 15px;
+                a{
+                    position:relative;
+                    padding-bottom: 12px;
+                    @include text(3.6rem, en, 3rem, #868686, uppercase); // tuỳ chỉnh
+                    line-height: -0.9px;
+                    &:hover{
+                        color: #fff;
+                    }
+                }
+                .more{
+                    a{
+                        margin-right: 20px;
+                        &:first-child{
+                            &:before{
+                                content: " ";
+                                width: 1px;
+                                height: 27px;
+                                background-color: #fff;
+                                position: absolute;
+                                right:-12px;
+                            }
+                        }
+                    }
+                }
+            }
+            &.active{
+                // .nav__menu{
+                    opacity: 1;
+                    pointer-events: auto;
+                // }
+            }
+        }
+    }
+}
