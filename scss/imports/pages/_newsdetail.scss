@@ -4,13 +4,25 @@
             justify-content: space-between;
             .right{
                 display: block;
+                cursor: pointer;
                 a{
                     @include text(1.1rem, arb, 3rem, #212121, uppercase);
                 }
                 img{
+                    position: relative;
                     height: 7px;
                     transform: rotate(180deg);
                     margin-left: 25px;
+                    filter:brightness(0) saturate(100%) ;
+                    transition: 0.2s;
+                    right:0;
+                }
+                &:hover{
+                    img{
+                        right: 10px;
+                        transition: 0.2s;
+                        transition-timing-function: ease-out;
+                    }
                 }
             }
         }

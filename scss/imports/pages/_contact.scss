@@ -59,6 +59,7 @@
                         @include text(1.2rem, arn, 2.4rem, #ffffff, none); // tuỳ chỉNH
                     }
                     input, textarea{
+                        resize: none;
                         outline: none;
                         border: 0;
                         background: transparent;

@@ -18,15 +18,17 @@ a {
 
 // colors (tuỳ chỉnh)
 .--white-cl {
-    color: $white-cl;
+    color: $white-cl ;
 }
 .--black-cl {
-    color: $black-cl;
+    color: $black-cl !important;
 }
 .--blue-cl {
     color: $blue-cl;
 }
-
+.--black-bg{
+    background-color:$black-cl !important;
+}
 // css article (nội dung chi tiết bài viết)
 article {
     h1,
@@ -165,15 +167,16 @@ article {
     color: $white-cl;
     border-radius: 3px;
     cursor: pointer;
-    &.--black{
+    background-color: #fff ;
+    color: $black-cl ;
+    border: 1px solid #171717;
+    &.active{
         background-color: #171717 ;
         color: $white-cl ;
     }
-    &.--white{
-        background-color: #fff ;
-        color: $black-cl ;
-        border: 1px solid #171717;
-    }
+    // &.--white{
+        
+    // }
 }
 .overlay{
     position:absolute;
@@ -325,15 +328,14 @@ article {
             display: flex;
             visibility: hidden;
             @include transition(0.1s);
-            h3{
+            a{
                 @include text(1.1rem, arb, 3rem, $white-cl, uppercase); // tuỳ chỉnh
                 letter-spacing: 1.1px;
                 cursor: pointer;
             }
             .contact{
-                h3{
+                a{
                     letter-spacing:0;
-                    cursor: pointer;
                 }
                 display: flex;
                 &_img{
@@ -612,7 +614,7 @@ article {
                 margin: auto;
                 @include text(1.2rem, arn, 2rem, #232323, none);
             }
-            &:hover{
+            &.active{
                 border: 1px solid #c1c1c1;
                 background-color: #ebebeb;
             }

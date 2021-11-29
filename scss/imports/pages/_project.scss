@@ -16,22 +16,50 @@
                     width: 470px;
                     font-family: arn;
                     letter-spacing:1.2px;
-                    color: $black-cl ;
+                    color: $black-cl;
+                    margin-bottom: 14px;
                 }
-                .btn{
-                    width: 200px;
-                    margin-bottom:calc(var(--h3-lh)/2);
-                    justify-content: space-around;
-                    border-radius: 0;
-                    h3{
-                        font-family: arb;
-                        color: $white-cl;
-                        text-transform: uppercase;
-                        margin-left: 40px
+                .dropdown{
+                    display:flex;
+                    flex-direction: column;
+                    .btn{
+                        width: 200px;
+                        margin-bottom:calc(var(--h3-lh)/2);
+                        justify-content: space-around;
+                        border-radius: 0;
+                        height:40px;
+                        margin:0;
+                        h3{
+                            font-family: arb;
+                            color: $white-cl;
+                            text-transform: uppercase;
+                            margin-left: 40px;
+                            margin-bottom: 0;
+                        }
+                        img{
+                            margin-right: 35px;
+                            height: 6px;
+                        }
                     }
-                    img{
-                        margin-right: 35px;
-                        height: 6px;
+                    .dropdown_list{
+                        opacity: 0;
+                        pointer-events: none;
+                        p{
+                            cursor: pointer;
+                            height: 100%;
+                            width: 100%;
+                            text-align: center;
+                            border: 1px solid #63512c;
+                            background-color: #705b32;
+                            padding: 5px auto;
+                            @include text(1.1rem,arb, 4rem, $white-cl, uppercase); 
+                        }
+                    }
+                    &.active{
+                        .dropdown_list{
+                            opacity: 1;
+                            pointer-events: auto;
+                        }
                     }
                 }
                 &:before{

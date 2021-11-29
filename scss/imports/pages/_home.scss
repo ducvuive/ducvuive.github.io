@@ -41,7 +41,7 @@
                         display:block;
                     }
                     h3{
-                        @include text(var(--h3-fs),arn, var(--h3-lh), $white-cl, uppercase); 
+                        @include text(var(--h3-fs),arb, var(--h3-lh), $white-cl, uppercase); 
                         // padding-bottom: 60px;
                         position: relative;
                         &:before{

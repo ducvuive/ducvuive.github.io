@@ -88,5 +88,43 @@ $(window).on('load', function(){
 
 })
 
+//service page
+let bt_service = $('.service .btn')
+function btn_removeAcitve(){
+    bt_service.removeClass('active')    
+}
+
+bt_service.on('click',function(e){
+    btn_removeAcitve()
+    $(this).addClass('active')
+})
 
 
+// page
+
+let page = $('.pager .btn')
+console.log(page)
+function pager_removeAcitve(){
+    page.removeClass('active')
+}
+
+page.on('click',function(e){
+    pager_removeAcitve()
+    $(this).addClass('active')
+})
+
+
+// projectpage
+
+let dropdown = $('.projectpage .dropdown .btn')
+let dropdown_list = $('.projectpage .dropdown')
+console.log(dropdown)
+dropdown.on('click',function(e){
+    dropdown_list.toggleClass('active')
+    console.log(1)
+    e.stopPropagation()
+})
+
+$(document).on('click',function(e){
+    dropdown_list.removeClass('active')
+})
