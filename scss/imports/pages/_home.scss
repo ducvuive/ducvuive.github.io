@@ -181,6 +181,37 @@
                 margin: 10px auto 20px;
             }
         }
+        .control{
+            position:absolute;
+            bottom:15px;
+            right:15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 20;
+            .btn{
+                width:58px;
+                height:40px;
+                background-color: #fff;
+                border-radius:0;
+                border: none;
+                opacity: 0.5;
+                img{
+                    margin: auto;
+                    width: 30px;
+                    filter: brightness(0) saturate(100%);
+                }
+                &:hover{
+                    //background-color: #171717;
+                    opacity: 0.8;
+                }
+                &.__pre{
+                    img{
+                        transform: rotate(180deg);
+                    }
+                }
+            }
+        } 
         @include md{
             height: 75vh;
             --bottom: 30px;

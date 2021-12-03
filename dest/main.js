@@ -34,6 +34,10 @@ $(window).on('load', function(){
         e.preventDefault()
         window.scrollTo({ top: 0, behavior: 'smooth' });
     })
+    // remove ghost images
+    document.addEventListener("dragstart", function( event ) {
+        event.dataTransfer.setDragImage(event.target, window.outerWidth, window.outerHeight);
+      }, false);
 
     // click home
     let home = $('.home');
@@ -62,28 +66,50 @@ $(window).on('load', function(){
     let load =  $('.load');
     load.css('display', 'none')
     // flickity
+    let _nextSlide = $('.homepage .__next')
+    let _preSlide = $('.homepage .__pre')
     $('.main-carousel').flickity({
         // options
         cellAlign: 'left',
         contain: true,
         wrapAround: true,
+        //fullscreen: true,
         prevNextButtons: false,   
         autoPlay: 2000,
         pauseAutoPlayOnHover: false ,
-        // on : {
-        //     ready: function() {
-        //         console.log('Flickity is ready');
-        //         $('.flickity-page-dots').appendTo('.left');
-        //     },
-        //     change:function(index) {
-        //         console.log(index)
-        //         //let flkty =  $('.main-carousel').flickity.data('flickity');
-        //         // var cellNumber = flkty.selectedIndex + 1;
-        //          numberPage.text(`0${index+1}`) 
-        //          list_dot.removeClass('active')
-        //          list_dot.eq(index).addClass('active')
-        //     }
-        // }
+        draggable: false,
+        on : {
+            ready: function()  {
+                _preSlide.on('click', function(e){
+                    $('.main-carousel').flickity('previous',true)
+                })
+                _nextSlide.on('click', function(e){
+                    $('.main-carousel').flickity('next',true)
+                })
+            }
+        },
+             change:function(index) {
+            
+         }
+      });
+      let _next = $('.product_detail ._next')
+      let _pre = $('.product_detail ._pre')
+      $('.detail_carousel').flickity({
+        // options
+        cellAlign: 'left',
+        contain: true,
+        fullscreen: true,
+        draggable: false,
+        on:{
+            ready: function()  {
+                _pre.on('click', function(e){
+                    $('.detail_carousel').flickity('previous',true)
+                })
+                _next.on('click', function(e){
+                    $('.detail_carousel').flickity('next',true)
+                })
+            }
+        }
       });
 
 })
@@ -113,18 +139,41 @@ page.on('click',function(e){
     $(this).addClass('active')
 })
 
+//product_detail
+let btn_product_detail = $('.product_detail .btn')
+function product_detail_removeAcitve(){
+    btn_product_detail.removeClass('active')
+}
 
+btn_product_detail.on('click',function(e){
+    product_detail_removeAcitve()
+    $(this).addClass('active')
+})
+
+//aboutus
+let btn_aboutus = $('.aboutus .btn')
+function aboutus_removeAcitve(){
+    btn_aboutus.removeClass('active')
+}
+
+btn_aboutus.on('click',function(e){
+    aboutus_removeAcitve()
+    $(this).addClass('active')
+})
 // projectpage
 
 let dropdown = $('.projectpage .dropdown .btn')
 let dropdown_list = $('.projectpage .dropdown')
+let dropdown_direction = $('.projectpage .dropdown .btn img')
 console.log(dropdown)
 dropdown.on('click',function(e){
     dropdown_list.toggleClass('active')
     console.log(1)
+    dropdown_direction.toggleClass('active')
     e.stopPropagation()
 })
 
 $(document).on('click',function(e){
     dropdown_list.removeClass('active')
+    dropdown_direction.removeClass('active')
 })

@@ -4,6 +4,10 @@
             justify-content: space-between;
             .mid{
                 filter: invert(0%) sepia(18%) saturate(6192%) hue-rotate(57deg) brightness(0%) contrast(88%);
+                top: 50%;
+                left: 50%;
+                @include transform(translate(-50%, -50%));
+                position: absolute;
             }
             .right{
                 display: block;
@@ -11,9 +15,20 @@
                     @include text(1.1rem, arb, 3rem, #212121, uppercase);
                 }
                 img{
+                    position: relative;
                     height: 7px;
                     transform: rotate(180deg);
+                    filter:brightness(0) saturate(100%) ;
                     margin-left: 25px;
+                    transition: 0.2s;
+                    right:0;
+                }
+                &:hover{
+                    img{
+                        right: 10px;
+                        transition: 0.2s;
+                        transition-timing-function: ease-out;
+                    }
                 }
             }
         }
@@ -71,7 +86,7 @@
                             align-items: center;
                             position: absolute;
                             bottom: 13px;
-                            h3{
+                            a{
                                 @include text(1.1rem, arb, 4rem, $black-cl, uppercase);
                                 letter-spacing:-0.3px;
                                 margin-right: 10px;
@@ -133,7 +148,10 @@
         .container{
             min-width: 1170px;
             .left{
-                padding-right: 15px;
+                padding-right: 30px;
+                .detail_carousel{
+                    outline: none;    
+                }   
                 .img{
                     width: 100%;
                     overflow: hidden;
@@ -154,7 +172,8 @@
                     background-color:#132539;
                     align-items: center;
                     justify-content: center;
-                    right: 15px;
+                    right: 30px;
+                    cursor: pointer;
                     img{
                         height: 16px;
                         width: 16px;
@@ -170,10 +189,61 @@
                     margin-top:30px;
                     img{
                         max-height: 54px;
+                        cursor: pointer;
+                        outline: none;
                         &:first-of-type{
                             margin-right: 20px;
                             transform: rotate(180deg);
                         }
+                        &:hover{
+                            opacity: 0.9;
+                        }
+                    }
+                }
+            }
+            .right{
+                padding-left:30px;
+                h2{
+                    @include text(3.2rem, en, 4rem, #010101, none);
+                    margin-bottom: 30px;
+                    margin-top: -18px;
+                }
+                .cost{
+                    display:flex;
+                    margin-bottom: 30px;
+                    span{
+                        @include text(1.2rem, arb, 5.4rem, #5b4816, uppercase);
+                        letter-spacing:1.2px;
+                        margin-right: 72px;
+                    }
+                    h4{
+                        @include text(1.6rem, arb, 5.4rem, #5b4816, uppercase);
+                        letter-spacing:1.6px;
+                    }
+                }
+                .details{
+                    margin-bottom: 80px;
+                    position: relative;
+                    &_item{
+                        display:flex;
+                        @include text(1.4rem, arn, 5.4rem, #000, none);
+                        letter-spacing:1.4px;
+                        h4{
+                            position: absolute;
+                            left: 135px;
+                        }
+                    }
+                }
+                .description{
+                    h3{
+                        letter-spacing: 1.3px;
+                        font-family: arb;
+                        text-transform: uppercase;
+                        margin-bottom: 12px;
+                    }
+                    h4{
+                        width: 250px;
+                        @include text(1.2rem, arn, 2rem, #010101, none);
                     }
                 }
             }

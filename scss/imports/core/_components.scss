@@ -172,7 +172,7 @@ article {
     border: 1px solid #171717;
     &.active{
         background-color: #171717 ;
-        color: $white-cl ;
+        color: $white-cl !important;
     }
     // &.--white{
         

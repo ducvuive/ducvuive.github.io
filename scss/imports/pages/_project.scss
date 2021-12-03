@@ -39,6 +39,12 @@
                         img{
                             margin-right: 35px;
                             height: 6px;
+                            transform: rotate(0deg);
+                            transition: 0.4s;
+                        }
+                        .active{
+                            transform: rotate(180deg);
+                            transition: 0.4s;
                         }
                     }
                     .dropdown_list{

@@ -133,7 +133,7 @@
                             align-items: center;
                             position: absolute;
                             bottom: 15px;
-                            h4{
+                            a{
                                 @include text(1.1rem, arb, 4rem, $black-cl, uppercase);
                                 letter-spacing:-0.3px;
                                 cursor: pointer;
