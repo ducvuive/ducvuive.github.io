@@ -48,7 +48,7 @@
                         height: 340px;
                         margin-bottom:25px;
                         img{
-                            transform: scale(1.05);
+                            transform: scale(1.03);
                             min-height: 100%;
                             min-width: 100%;
                             transition: 0.4s;
@@ -86,7 +86,7 @@
                         transition: 0.4s;
                         .img{
                             img{
-                                transform: scale(1.3);
+                                transform: scale(1.15);
                                 transition: 0.4s;
                             }
                         }
@@ -124,6 +124,56 @@
                     margin: 53px 15px 150px;
                     h3{
                         @include text(1.1, eb, 2, none, uppercase);
+                    }
+                }
+            }
+        }
+    }
+    .product_info{
+        .container{
+            min-width: 1170px;
+            .left{
+                padding-right: 15px;
+                .img{
+                    width: 100%;
+                    overflow: hidden;
+                    height: 540px;
+                    img{
+                        height: 540px;
+                        object-fit: cover;
+                        min-width: 100%;
+                        padding-bottom: 15px;
+                        padding: 0;
+                    }
+                }
+                .zoom{
+                    height:30px;
+                    width: 100px;
+                    position: absolute;
+                    display: flex; 
+                    background-color:#132539;
+                    align-items: center;
+                    justify-content: center;
+                    right: 15px;
+                    img{
+                        height: 16px;
+                        width: 16px;
+                        filter: invert(100%);
+                    }
+                    span{
+                        @include text(1.1rem, arn, 6rem, #fff, uppercase);
+                        letter-spacing:0.22px;
+                        margin: 0 20px;
+                    }
+                }
+                .move{
+                    margin-top:30px;
+                    img{
+                        max-height: 54px;
+                        &:first-of-type{
+                            margin-right: 20px;
+                            transform: rotate(180deg);
+                        }
                     }
                 }
             }
