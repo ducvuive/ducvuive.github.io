@@ -204,8 +204,18 @@ article {
         align-items:center;
         @include text(1.1rem, arb, 4rem, $white-cl, uppercase); // tuỳ chỉnh
         img{
+            position: relative;
             height: 8px;
             margin-left: 18px;   
+            transition: 0.4s;
+            left:0;
+        }
+        &:hover{
+            img{
+                position: relative;
+                transition: 0.4s;
+                left: 20px;
+            }
         }
     }
 }

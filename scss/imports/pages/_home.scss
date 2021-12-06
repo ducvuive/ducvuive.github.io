@@ -30,11 +30,13 @@
                 }
                 .title{
                     @include mid();
+                    top: 40%;
                     text-align: center;
                     align-items:center;
                     z-index: 5;
                     visibility: visible;
                     transition: 1s;
+                    position: relative;
                     h1{
                         @include text(var(--h1-fs),en , var(--h1-lh), $white-cl, none); 
                         margin-bottom: 75px;
@@ -43,24 +45,16 @@
                     h3{
                         @include text(var(--h3-fs),arb, var(--h3-lh), $white-cl, uppercase); 
                         // padding-bottom: 60px;
-                        position: relative;
-                        &:before{
-                            content: " ";
-                            position: absolute;
-                            height: 1px;
-                            width: 750px;
-                            left: -25%;
-                            top: -20px;
-                            background: #fff;
-                        }
                     }
-                    .btn{
-                        position: relative;
-                        bottom: -50px;                
-                        display: inline-flex;
-                        a{
-                            @include text(1.1rem,arn, 2rem , $white-cl, uppercase); 
-                        }
+                    &:before{
+                        content: " ";
+                        position: absolute;
+                        height: 1px;
+                        width: 60%;
+                        top: 70px;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        background-color: #fff;
                     }
                     
                 }
@@ -165,6 +159,14 @@
             justify-content: center; 
             flex-direction: column;
             z-index: 7;
+            .btn{
+                position: relative;
+                top: -170px;                
+                display: inline-flex;
+                a{
+                    @include text(1.1rem,arn, 2rem , $white-cl, uppercase); 
+                }
+            }
             &:before {
                 content: " ";
                 position: absolute;
@@ -239,6 +241,9 @@
                 display: none;
             }
             .bottom{
+                display: none;
+            }
+            .control{
                 display: none;
             }
         }
