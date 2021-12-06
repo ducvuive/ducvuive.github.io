@@ -395,13 +395,16 @@
             }
             .logo__menu{
                 cursor: pointer;
-                display: contents;
-                margin-left: 60px;
+                //display: contents;
+                //margin-left: 60px;
                 margin-right: 5px;
                 img{
                     filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7447%) hue-rotate(7deg) brightness(90%) contrast(107%);
                     height: 47px;
                     padding: 0 60px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
                 }
                 h1{
                     display: none;
